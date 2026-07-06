@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ADOT 2048 Training Game</title>
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="intro">
+        <p class="eyebrow">ADOT GitHub for Developers</p>
+        <h1>2048 Training Game</h1>
+        <!-- Lab 1: Add Game Rules -->
+      </section>
+
+      <section class="scoreboard" aria-label="Scoreboard">
+        <div>
+          <span class="score-label">Score</span>
+          <strong id="score">0</strong>
+        </div>
+        <div>
+          <span class="score-label">Best</span>
+          <strong id="best-score">0</strong>
+        </div>
+      </section>
+
+      <section
+        id="game-board"
+        class="game-board"
+        aria-label="Game board"
+      ></section>
+
+      <button id="new-game" type="button">New game</button>
+    </main>
+
+    <script type="module" src="/src/application.ts"></script>
+  </body>
+</html>

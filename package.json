@@ -1,0 +1,21 @@
+{
+  "name": "adot-github-developers-training",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Hands-on training repository for the ADOT GitHub for Developers workshop.",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "tsc && vite build",
+    "lint": "tsc --noEmit",
+    "format": "prettier . --write",
+    "format:check": "prettier . --check",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "prettier": "latest",
+    "typescript": "latest",
+    "vite": "latest",
+    "vitest": "latest"
+  }
+}
