@@ -64,7 +64,7 @@ Use whichever workflow is most comfortable. Both are supported throughout the la
 
 ```bash
 git clone <your-repo-url>
-cd attendee-repo
+cd <your-repo>
 npm ci
 npm run build
 npm test

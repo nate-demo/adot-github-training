@@ -20,7 +20,7 @@ You cannot fork in the sandbox org, so create your own copy from this
 
 ```bash
 git clone <your-repo-url>
-cd attendee-repo
+cd <your-repo>
 npm ci
 npm run build
 npm test

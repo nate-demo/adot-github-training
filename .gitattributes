@@ -1,0 +1,3 @@
+# Normalize line endings to LF on checkout so Prettier's format:check
+# passes consistently on Windows, macOS, and Linux (and on CI).
+* text=auto eol=lf

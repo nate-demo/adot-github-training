@@ -67,7 +67,41 @@ code --version
 
 ---
 
-## 4. Install these VS Code extensions
+## 4. Install Node.js
+
+The training app is built and tested with **Node.js 22 (LTS) or newer**. `npm`
+ships with Node, so installing Node gives you both.
+
+### Windows
+```powershell
+winget install --id OpenJS.NodeJS.LTS
+```
+
+### macOS
+```bash
+brew install node
+```
+
+### Linux
+```bash
+# Debian / Ubuntu (via NodeSource)
+curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash -
+sudo apt install -y nodejs
+```
+
+If your agency blocks these installers, download the LTS installer from
+[nodejs.org](https://nodejs.org/) or use your internal software portal.
+
+### Verify
+```bash
+node --version
+# expect: v22.x or later
+npm --version
+```
+
+---
+
+## 5. Install these VS Code extensions
 
 Open VS Code → Extensions view (Ctrl+Shift+X) → search and install each.
 
@@ -94,7 +128,7 @@ code --install-extension EditorConfig.EditorConfig
 
 ---
 
-## 5. Install the GitHub CLI (optional but recommended)
+## 6. Install the GitHub CLI (optional but recommended)
 
 The [`gh`](https://cli.github.com/) CLI makes many GitHub operations one command instead of a browser round-trip.
 
@@ -118,7 +152,7 @@ gh --version
 
 ---
 
-## 6. Authenticate to your enterprise GitHub
+## 7. Authenticate to your enterprise GitHub
 
 Ask your platform team **which GitHub URL your organization uses** — for example:
 - `github.com/your-enterprise-slug` (GitHub Enterprise Cloud)
@@ -158,7 +192,7 @@ ssh -T git@github.com
 
 ---
 
-## 7. Verify you can reach the workshop repo
+## 8. Verify you can reach the workshop repo
 
 Your instructor will paste the workshop repo URL in chat during Day 1. As a pre-flight check, try opening `https://github.com/` in a browser and signing in. If your organization has SSO, complete that flow now so it's not blocking you Monday morning.
 
@@ -167,7 +201,7 @@ Your instructor will paste the workshop repo URL in chat during Day 1. As a pre-
 ## Troubleshooting
 
 ### "Permission denied (publickey)"
-You're trying SSH but the key isn't registered. Follow section 6 Option B, or fall back to `gh auth login`.
+You're trying SSH but the key isn't registered. Follow section 7 Option B, or fall back to `gh auth login`.
 
 ### "fatal: unable to access ... 407 Proxy Authentication Required"
 Corporate proxy. Ask your platform team for the proxy URL, then:
@@ -198,6 +232,7 @@ You should be able to answer YES to all of these:
 
 - [ ] `git --version` shows 2.40 or later
 - [ ] `code --version` opens successfully  
+- [ ] `node --version` shows v22 or later
 - [ ] You can log in to your enterprise GitHub in the browser
 - [ ] `gh auth status` (or `ssh -T git@github.com`) shows you're authenticated
 - [ ] You've installed at least the **GitHub Pull Requests** and **GitLens** VS Code extensions

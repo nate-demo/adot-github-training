@@ -28,7 +28,7 @@ If you have not already, clone your copy of the training repository.
 
    ```bash
    git clone <your-repo-url>
-   cd attendee-repo
+   cd <your-repo>
    ```
 
 1. Verify Git can see the project

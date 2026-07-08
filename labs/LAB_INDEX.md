@@ -1,7 +1,7 @@
 # ADOT Lab Index
 
 This is the streamlined lab flow for the ADOT GitHub for Developers
-VBD. It maps to the deck agenda (2 days, 3.5 hours per day) and
+VBD. It maps to the deck agenda (2 days, ~3 hours 20 minutes per day) and
 covers everyday workflows before the more advanced topics.
 
 Each lab is a single markdown file — no folders, no separate READMEs.

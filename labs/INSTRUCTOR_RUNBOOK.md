@@ -27,15 +27,13 @@ Do these on `nate-demo/adot-github-training` **before Day 1**:
 - [ ] Have a spare account/repo ready to play "partner" for an odd
       person out.
 
-### Known cosmetic issue (safe to ignore)
+### Line endings
 
-`npm run format:check` fails on a **Windows** checkout because the repo
-files are stored with CRLF line endings and Prettier expects LF. This is
-pre-existing and only affects local Windows runs — **CI on the Linux
-runner passes** (checkout normalizes to LF). Attendees are never asked to
-run `format:check` locally. If you want to silence it, add a
-`.gitattributes` with `* text=auto eol=lf` and re-commit, but that is not
-required for the workshop.
+The repo ships a `.gitattributes` (`* text=auto eol=lf`) so fresh clones
+check out LF line endings on every OS. This keeps `npm run format:check`
+green on Windows, macOS, Linux, and CI. If you converted an older working
+copy that still has CRLF files, run `git add --renormalize .` once and
+commit.
 
 ---
 
@@ -63,7 +61,7 @@ the #1 time sink for first-timers.
 | Lab 2 Protect Main | 25–35 min  | Rulesets UI; set approvals to **0** (see below)  |
 | Lab 3 GitHub Flow  | 35–45 min  | Pairing + cross-repo review access; flex item   |
 
-Day 1 hands-on total: **~2.1–2.9 hrs**. Full but workable in a 3.5-hr
+Day 1 hands-on total: **~2.1–2.9 hrs**. Full but workable in a 3h20m
 day. **Lab 3 is the flex item** — if you run long, finish it at the top of
 Day 2 before Lab 4.
 
@@ -78,7 +76,7 @@ Day 2 before Lab 4.
 | 6   | Create Release  | 30–40 min  | Pairing again; wait on CD workflow              |
 | 7   | Deploy          | 30–45 min  | Pages/env, comment-bot latency, rollback wait   |
 
-Day 2 hands-on total: **~2.3–3.0 hrs** — fits a 3.5-hr day. Labs 6 and 7
+Day 2 hands-on total: **~2.3–3.0 hrs** — fits a 3h20m day. Labs 6 and 7
 form the **capstone**; run them hands-on if time allows, otherwise demo.
 
 ### If you are running long, cut in this order
