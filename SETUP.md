@@ -1,66 +1,87 @@
 # Setup Guide
 
-Complete this **before** Day 1 starts. It takes about 15 minutes on a clean machine, less if you already have some tools installed.
+Do this **before Day 1**. It takes about 15 minutes on a fresh machine — less if you already have some tools installed.
 
-If you get stuck: the workshop repo has a `#setup-help` section in the class chat. Post there and someone (me, or another attendee ahead of you) will help.
+You don't need to be a command-line expert. Just follow each step in order, and run the little "check" commands to confirm things worked.
+
+**Stuck on anything?** Post in the `#setup-help` channel in the class chat. Someone will help you get unblocked.
+
+---
+
+## What you'll install
+
+1. Git — the version-control tool
+2. Visual Studio Code — your editor
+3. Node.js — runs the practice app
+4. A few VS Code extensions
+5. GitHub CLI — signs you in to GitHub
+
+Work through them top to bottom.
 
 ---
 
 ## 1. Install Git
 
+Git is the tool that tracks changes to your code.
+
 ### Windows
-Download the installer from [git-scm.com](https://git-scm.com/download/win) and run it. Accept the defaults — but on the **"Choosing the default editor"** page, pick **Visual Studio Code**.
+Download the installer from [git-scm.com](https://git-scm.com/download/win) and run it. Keep clicking **Next** to accept the defaults — but on the **"Choosing the default editor"** screen, pick **Visual Studio Code**.
 
 ### macOS
+Open the **Terminal** app and run:
 ```bash
-# Option A: Xcode Command Line Tools (bundles Git)
 xcode-select --install
-
-# Option B: Homebrew
-brew install git
 ```
+Click **Install** in the pop-up. (This gives you Git.)
 
 ### Linux
 ```bash
-# Debian / Ubuntu
+# Ubuntu / Debian
 sudo apt update && sudo apt install -y git
-
-# Fedora / RHEL
-sudo dnf install -y git
 ```
 
-### Verify
+### Check it worked
+Open a terminal and run:
 ```bash
 git --version
-# expect: git version 2.40+ (2.45 or later is ideal)
 ```
+You should see something like `git version 2.45.0`. Any version 2.40 or higher is fine.
 
 ---
 
-## 2. Configure Git
+## 2. Tell Git who you are
 
-Substitute your name and enterprise email. **Use your real work email so commits attribute correctly.**
+Git stamps your name and email on every change you save. Run these two commands, replacing the name and email with **your real work name and email**:
 
 ```bash
 git config --global user.name "Alex Rivera"
 git config --global user.email "alex.rivera@your-agency.gov"
-git config --global init.defaultBranch main
-git config --global pull.rebase false     # merge on pull (safer default for beginners)
-git config --global core.autocrlf input   # Windows only: normalize line endings
 ```
 
-Verify:
+> **Why your real email?** It makes sure your work is credited to you.
+
+Then run these three to set beginner-friendly defaults (copy them exactly):
+```bash
+git config --global init.defaultBranch main
+git config --global pull.rebase false
+git config --global core.autocrlf input
+```
+
+### Check it worked
 ```bash
 git config --global --list
 ```
+You should see your name and email in the output.
 
 ---
 
 ## 3. Install Visual Studio Code
 
-Download from [code.visualstudio.com](https://code.visualstudio.com/) and run the installer. Accept the defaults — but on Windows, **check the "Add to PATH" option** so you can launch it with `code .`.
+VS Code is the editor you'll use all workshop.
 
-Verify from a terminal:
+Download it from [code.visualstudio.com](https://code.visualstudio.com/) and run the installer. Accept the defaults — and on Windows, **check the box that says "Add to PATH"**. This lets you open the editor by typing `code .` in a terminal.
+
+### Check it worked
 ```bash
 code --version
 ```
@@ -69,8 +90,7 @@ code --version
 
 ## 4. Install Node.js
 
-The training app is built and tested with **Node.js 22 (LTS) or newer**. `npm`
-ships with Node, so installing Node gives you both.
+Node.js runs the small practice app we'll use in the labs. Installing Node also gives you `npm`.
 
 ### Windows
 ```powershell
@@ -81,56 +101,51 @@ winget install --id OpenJS.NodeJS.LTS
 ```bash
 brew install node
 ```
+(If you don't have Homebrew, download the installer from [nodejs.org](https://nodejs.org/) instead — pick the **LTS** version.)
 
 ### Linux
 ```bash
-# Debian / Ubuntu (via NodeSource)
 curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash -
 sudo apt install -y nodejs
 ```
 
-If your agency blocks these installers, download the LTS installer from
-[nodejs.org](https://nodejs.org/) or use your internal software portal.
+> If your agency blocks these installers, download the **LTS** version from [nodejs.org](https://nodejs.org/) or use your internal software portal.
 
-### Verify
+### Check it worked
 ```bash
 node --version
-# expect: v22.x or later
 npm --version
 ```
+`node --version` should show `v22` or higher.
 
 ---
 
-## 5. Install these VS Code extensions
+## 5. Install VS Code extensions
 
-Open VS Code → Extensions view (Ctrl+Shift+X) → search and install each.
+Open VS Code, click the **Extensions** icon on the left sidebar (or press `Ctrl+Shift+X`), then search for and install each of these:
 
-| Extension                        | Publisher              | Why                                                        |
-|----------------------------------|------------------------|------------------------------------------------------------|
-| **GitHub Pull Requests**         | GitHub                 | Open, review, and merge PRs without leaving the editor.    |
-| **GitHub Actions**               | GitHub                 | Author, lint, and monitor workflows.                       |
-| **GitLens — Git supercharged**   | GitKraken              | Blame overlays, timeline, powerful history views.          |
-| **GitHub Repositories**          | GitHub                 | Browse and edit GitHub repos without cloning.              |
-| **YAML**                         | Red Hat                | Syntax highlighting and schema validation for workflows.   |
-| **Markdown All in One**          | Yu Zhang               | Nicer markdown editing (READMEs, PR descriptions).         |
-| **EditorConfig**                 | EditorConfig           | Consistent whitespace across your team.                    |
+| Extension                      | Publisher    | What it does                                    |
+|--------------------------------|--------------|-------------------------------------------------|
+| **GitHub Pull Requests**       | GitHub       | Review and merge pull requests inside VS Code.  |
+| **GitHub Actions**             | GitHub       | Write and watch automated workflows.            |
+| **GitLens — Git supercharged** | GitKraken    | See who changed each line and when.             |
+| **YAML**                       | Red Hat      | Helps you edit workflow files.                  |
+| **Markdown All in One**        | Yu Zhang     | Nicer editing for READMEs and PR descriptions.  |
 
-Or install them all with one command:
+**Faster option:** paste all of these into a terminal to install them at once:
 ```bash
 code --install-extension GitHub.vscode-pull-request-github
 code --install-extension GitHub.vscode-github-actions
 code --install-extension eamodio.gitlens
-code --install-extension GitHub.remotehub
 code --install-extension redhat.vscode-yaml
 code --install-extension yzhang.markdown-all-in-one
-code --install-extension EditorConfig.EditorConfig
 ```
 
 ---
 
-## 6. Install the GitHub CLI (optional but recommended)
+## 6. Install the GitHub CLI
 
-The [`gh`](https://cli.github.com/) CLI makes many GitHub operations one command instead of a browser round-trip.
+The GitHub CLI (`gh`) is the easiest way to sign in to GitHub.
 
 ### Windows
 ```powershell
@@ -143,98 +158,72 @@ brew install gh
 ```
 
 ### Linux
-See the [official install page](https://github.com/cli/cli/blob/trunk/docs/install_linux.md) for your distro.
+Follow the [official install guide](https://github.com/cli/cli/blob/trunk/docs/install_linux.md) for your distro.
 
-### Verify
+### Check it worked
 ```bash
 gh --version
 ```
 
 ---
 
-## 7. Authenticate to your enterprise GitHub
+## 7. Sign in to GitHub
 
-Ask your platform team **which GitHub URL your organization uses** — for example:
-- `github.com/your-enterprise-slug` (GitHub Enterprise Cloud)
-- `github.<your-agency>.gov` or an internal URL (GitHub Enterprise Server)
-
-### Option A — GitHub CLI (easiest)
+Run:
 ```bash
 gh auth login
 ```
-Follow the prompts. Pick:
-- **HTTPS** for the git protocol.
-- **Yes** to authenticate Git with your GitHub credentials.
-- **Browser** for the auth method — a one-time device code opens a page in your browser.
 
-This configures your Git credential helper automatically for both HTTPS and API calls.
+Answer the prompts like this:
+- **What account do you want to log into?** → GitHub.com (or your enterprise, if your instructor tells you otherwise)
+- **What is your preferred protocol?** → **HTTPS**
+- **Authenticate Git with your GitHub credentials?** → **Yes**
+- **How would you like to authenticate?** → **Login with a web browser**
 
-### Option B — SSH key (traditional)
+A one-time code appears in the terminal. Copy it, press Enter, and paste it into the page that opens in your browser. That's it — you're signed in.
+
+> If your organization uses single sign-on (SSO), complete that prompt in the browser now so it's not blocking you on Day 1.
+
+### Check it worked
 ```bash
-ssh-keygen -t ed25519 -C "alex.rivera@your-agency.gov"
-# accept the default path (~/.ssh/id_ed25519)
-# set a passphrase (recommended)
-
-# On macOS/Linux:
-cat ~/.ssh/id_ed25519.pub
-
-# On Windows (PowerShell):
-Get-Content $HOME\.ssh\id_ed25519.pub
+gh auth status
 ```
-
-Copy the output, then in the GitHub UI go to **Settings → SSH and GPG keys → New SSH key**, paste, and save.
-
-Verify:
-```bash
-ssh -T git@github.com
-# expect: "Hi <your-username>! You've successfully authenticated..."
-```
+You should see a green checkmark saying you're logged in.
 
 ---
 
-## 8. Verify you can reach the workshop repo
+## Are you ready for class?
 
-Your instructor will paste the workshop repo URL in chat during Day 1. As a pre-flight check, try opening `https://github.com/` in a browser and signing in. If your organization has SSO, complete that flow now so it's not blocking you Monday morning.
+Go through this checklist. You should be able to check every box:
+
+- [ ] `git --version` shows 2.40 or later
+- [ ] `git config --global --list` shows your name and email
+- [ ] `code --version` works
+- [ ] `node --version` shows v22 or later
+- [ ] `gh auth status` shows you're logged in
+- [ ] You installed the VS Code extensions (at least **GitHub Pull Requests** and **GitLens**)
 
 ---
 
 ## Troubleshooting
 
-### "Permission denied (publickey)"
-You're trying SSH but the key isn't registered. Follow section 7 Option B, or fall back to `gh auth login`.
+**`code` command not found (Windows)**
+Reinstall VS Code and check the "Add to PATH" box. Or restart your terminal.
 
-### "fatal: unable to access ... 407 Proxy Authentication Required"
-Corporate proxy. Ask your platform team for the proxy URL, then:
+**`code` command not found (macOS)**
+In VS Code, press `Cmd+Shift+P`, type "Shell Command", and pick **"Install 'code' command in PATH"**.
+
+**"407 Proxy Authentication Required"**
+You're behind a corporate proxy. Ask your platform team for the proxy address, then run (with their values):
 ```bash
 git config --global http.proxy http://user:pass@proxy.example.com:8080
 git config --global https.proxy http://user:pass@proxy.example.com:8080
 ```
 
-### `code` command not found (macOS)
-In VS Code: `Cmd+Shift+P` → "Shell Command: Install 'code' command in PATH".
+**My installer is blocked by my agency**
+Some agencies block `winget`, `brew`, or direct downloads. Get Git, VS Code, and Node.js from your internal software portal instead, or ask in `#setup-help`.
 
-### `code` command not found (Windows)
-Reinstall VS Code and check the "Add to PATH" option, or manually add `C:\Users\<you>\AppData\Local\Programs\Microsoft VS Code\bin` to your PATH.
+**Still stuck?**
+Post in `#setup-help` with the command you ran and the error you got. We'll sort it out before Day 1.
 
-### Git says my commit was signed by someone else
-You configured `user.email` with the wrong address. Update it (see section 2) and re-commit; existing commits will still show the old attribution.
-
-### Corporate laptop restrictions
-Some agencies restrict `winget`, `brew`, or direct downloads. In that case:
-- Windows: get the Git and VS Code MSI installers from your internal software portal.
-- Ask your platform team about a `~/.gitconfig` template — many agencies publish one.
-
----
-
-## Ready for class?
-
-You should be able to answer YES to all of these:
-
-- [ ] `git --version` shows 2.40 or later
-- [ ] `code --version` opens successfully  
-- [ ] `node --version` shows v22 or later
-- [ ] You can log in to your enterprise GitHub in the browser
-- [ ] `gh auth status` (or `ssh -T git@github.com`) shows you're authenticated
-- [ ] You've installed at least the **GitHub Pull Requests** and **GitLens** VS Code extensions
-
-See you Day 1. 🚀
+See you in class. 🚀
