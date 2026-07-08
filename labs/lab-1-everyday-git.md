@@ -90,6 +90,21 @@ Before committing, make sure your change works.
    `http://localhost:5173`). Opening `index.html` directly from disk
    will not work — this is a Vite app that must be served.
 1. Confirm the rules appear above the game board
+1. Stop the dev server with `Ctrl+C`, then check your formatting
+
+   ```bash
+   npm run format:check
+   ```
+
+   If the check **fails**, your edit doesn't match the project's
+   formatting. Try to fix the spacing and indentation by hand. If you
+   can't get it to pass, let Prettier fix it for you automatically:
+
+   ```bash
+   npx prettier --write .
+   ```
+
+   Then run `npm run format:check` again — it should now pass.
 
 ## Task 5: Stage and commit
 
