@@ -41,8 +41,11 @@ second will conflict.
 1. Make sure you are on `main`
 
    ```bash
-   git checkout main
+   git branch
    ```
+
+   The current branch is marked with `*`. If it is not `main`, run
+   `git checkout main` first.
 
 1. Create and switch to the first feature branch
 
