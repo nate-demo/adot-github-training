@@ -38,21 +38,3 @@ Every lab includes commands that work in any terminal. If you prefer VS Code,
 open the repository folder, use the integrated terminal, and use the provided
 VS Code tasks for build, test, format check, and the dev server.
 
-## Notes on the old lab numbering
-
-The upstream `githubschool/gh-github-intermediate-template` repo
-numbers labs 1-11 including several advanced topics (tags, bisect,
-interactive rebase, cherry-pick). Those are intentionally omitted
-from the ADOT flow because they are not part of the day-to-day
-workflow for a beginner-to-intermediate audience. They remain
-available in the upstream repo for anyone who wants to explore them.
-
-| ADOT lab | Upstream reference                                            |
-| -------- | ------------------------------------------------------------- |
-| Lab 1    | Lab 0 (Clone) + Lab 1 (Add a Feature) combined                |
-| Lab 2    | Lab 6 (Protect the `main` Branch)                             |
-| Lab 3    | Lab 7 (GitHub Flow)                                           |
-| Lab 4    | Lab 8 (Merge Conflicts) — **rewritten to be learner-driven**  |
-| Lab 5    | Lab 9 (Run a Workflow) — **added re-run and cancel practice** |
-| Lab 6    | Lab 10 (Create a Release)                                     |
-| Lab 7    | Lab 11 (Deploy to an Environment)                             |
