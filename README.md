@@ -21,13 +21,18 @@ You cannot fork in the sandbox org, so create your own copy from this
 ```bash
 git clone <your-repo-url>
 cd <your-repo>
-npm ci
-npm run build
-npm test
-npm run dev
+npm ci        # install dependencies
+npm run build # compile the app
+npm test      # run the unit tests
+npm run dev   # start the local dev server
 ```
 
-Open the local URL printed by Vite, usually `http://localhost:5173`.
+Open the local URL printed by Vite, usually `http://localhost:5173`, and
+play a round of the game to confirm everything works.
+
+To stop the dev server, click the terminal and press `Ctrl+C`.
+
+Once the game runs, **you're ready for [Lab 1: Everyday Git](./labs/lab-1-everyday-git.md).**
 
 ## Quick start with VS Code
 
@@ -41,11 +46,28 @@ Open the local URL printed by Vite, usually `http://localhost:5173`.
 1. Run:
 
    ```bash
-   npm ci
-   npm run dev
+   npm ci        # install dependencies
+   npm run dev   # start the local dev server
    ```
 
-1. Use **Run Task** (`Ctrl+Shift+P` -> **Tasks: Run Task**) for build, test, format check, and dev server commands.
+1. Open the local URL printed by Vite (usually `http://localhost:5173`) and
+   play a round to confirm the game works.
+1. To stop the dev server, click the terminal and press `Ctrl+C`.
+
+**Once the game runs, you're ready for [Lab 1: Everyday Git](./labs/lab-1-everyday-git.md).**
+
+### Running project tasks in VS Code
+
+Instead of typing npm commands, you can use VS Code's built-in task runner:
+press `Ctrl+Shift+P`, choose **Tasks: Run Task**, then pick one of these:
+
+| Task                     | What it does                                           |
+| ------------------------ | ------------------------------------------------------ |
+| **Install dependencies** | Runs `npm ci` to install packages.                     |
+| **Start dev server**     | Runs `npm run dev` to launch the game locally.         |
+| **Build**                | Runs `npm run build` to compile the app.               |
+| **Test**                 | Runs `npm test` to run the unit tests.                 |
+| **Format check**         | Runs `npm run format:check` to verify code formatting. |
 
 ## Workshop labs
 

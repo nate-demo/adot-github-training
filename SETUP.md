@@ -25,26 +25,34 @@ Work through them top to bottom.
 Git is the tool that tracks changes to your code.
 
 ### Windows
+
 Download the installer from [git-scm.com](https://git-scm.com/download/win) and run it. Keep clicking **Next** to accept the defaults — but on the **"Choosing the default editor"** screen, pick **Visual Studio Code**.
 
 ### macOS
+
 Open the **Terminal** app and run:
+
 ```bash
 xcode-select --install
 ```
+
 Click **Install** in the pop-up. (This gives you Git.)
 
 ### Linux
+
 ```bash
 # Ubuntu / Debian
 sudo apt update && sudo apt install -y git
 ```
 
 ### Check it worked
+
 Open a terminal and run:
+
 ```bash
 git --version
 ```
+
 You should see something like `git version 2.45.0`. Any version 2.40 or higher is fine.
 
 ---
@@ -61,6 +69,7 @@ git config --global user.email "alex.rivera@your-agency.gov"
 > **Why your real email?** It makes sure your work is credited to you.
 
 Then run these three to set beginner-friendly defaults (copy them exactly):
+
 ```bash
 git config --global init.defaultBranch main
 git config --global pull.rebase false
@@ -68,9 +77,11 @@ git config --global core.autocrlf input
 ```
 
 ### Check it worked
+
 ```bash
 git config --global --list
 ```
+
 You should see your name and email in the output.
 
 ---
@@ -82,6 +93,7 @@ VS Code is the editor you'll use all workshop.
 Download it from [code.visualstudio.com](https://code.visualstudio.com/) and run the installer. Accept the defaults — and on Windows, **check the box that says "Add to PATH"**. This lets you open the editor by typing `code .` in a terminal.
 
 ### Check it worked
+
 ```bash
 code --version
 ```
@@ -93,17 +105,21 @@ code --version
 Node.js runs the small practice app we'll use in the labs. Installing Node also gives you `npm`.
 
 ### Windows
+
 ```powershell
 winget install --id OpenJS.NodeJS.LTS
 ```
 
 ### macOS
+
 ```bash
 brew install node
 ```
+
 (If you don't have Homebrew, download the installer from [nodejs.org](https://nodejs.org/) instead — pick the **LTS** version.)
 
 ### Linux
+
 ```bash
 curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash -
 sudo apt install -y nodejs
@@ -112,10 +128,12 @@ sudo apt install -y nodejs
 > If your agency blocks these installers, download the **LTS** version from [nodejs.org](https://nodejs.org/) or use your internal software portal.
 
 ### Check it worked
+
 ```bash
 node --version
 npm --version
 ```
+
 `node --version` should show `v22` or higher.
 
 ---
@@ -124,15 +142,16 @@ npm --version
 
 Open VS Code, click the **Extensions** icon on the left sidebar (or press `Ctrl+Shift+X`), then search for and install each of these:
 
-| Extension                      | Publisher    | What it does                                    |
-|--------------------------------|--------------|-------------------------------------------------|
-| **GitHub Pull Requests**       | GitHub       | Review and merge pull requests inside VS Code.  |
-| **GitHub Actions**             | GitHub       | Write and watch automated workflows.            |
-| **GitLens — Git supercharged** | GitKraken    | See who changed each line and when.             |
-| **YAML**                       | Red Hat      | Helps you edit workflow files.                  |
-| **Markdown All in One**        | Yu Zhang     | Nicer editing for READMEs and PR descriptions.  |
+| Extension                      | Publisher | What it does                                   |
+| ------------------------------ | --------- | ---------------------------------------------- |
+| **GitHub Pull Requests**       | GitHub    | Review and merge pull requests inside VS Code. |
+| **GitHub Actions**             | GitHub    | Write and watch automated workflows.           |
+| **GitLens — Git supercharged** | GitKraken | See who changed each line and when.            |
+| **YAML**                       | Red Hat   | Helps you edit workflow files.                 |
+| **Markdown All in One**        | Yu Zhang  | Nicer editing for READMEs and PR descriptions. |
 
 **Faster option:** paste all of these into a terminal to install them at once:
+
 ```bash
 code --install-extension GitHub.vscode-pull-request-github
 code --install-extension GitHub.vscode-github-actions
@@ -148,19 +167,23 @@ code --install-extension yzhang.markdown-all-in-one
 The GitHub CLI (`gh`) is the easiest way to sign in to GitHub.
 
 ### Windows
+
 ```powershell
 winget install --id GitHub.cli
 ```
 
 ### macOS
+
 ```bash
 brew install gh
 ```
 
 ### Linux
+
 Follow the [official install guide](https://github.com/cli/cli/blob/trunk/docs/install_linux.md) for your distro.
 
 ### Check it worked
+
 ```bash
 gh --version
 ```
@@ -170,11 +193,13 @@ gh --version
 ## 7. Sign in to GitHub
 
 Run:
+
 ```bash
 gh auth login
 ```
 
 Answer the prompts like this:
+
 - **What account do you want to log into?** → GitHub.com (or your enterprise, if your instructor tells you otherwise)
 - **What is your preferred protocol?** → **HTTPS**
 - **Authenticate Git with your GitHub credentials?** → **Yes**
@@ -185,9 +210,11 @@ A one-time code appears in the terminal. Copy it, press Enter, and paste it into
 > If your organization uses single sign-on (SSO), complete that prompt in the browser now so it's not blocking you on Day 1.
 
 ### Check it worked
+
 ```bash
 gh auth status
 ```
+
 You should see a green checkmark saying you're logged in.
 
 ---
@@ -215,6 +242,7 @@ In VS Code, press `Cmd+Shift+P`, type "Shell Command", and pick **"Install 'code
 
 **"407 Proxy Authentication Required"**
 You're behind a corporate proxy. Ask your platform team for the proxy address, then run (with their values):
+
 ```bash
 git config --global http.proxy http://user:pass@proxy.example.com:8080
 git config --global https.proxy http://user:pass@proxy.example.com:8080

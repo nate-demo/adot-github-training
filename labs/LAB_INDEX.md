@@ -37,4 +37,3 @@ Each lab is a single markdown file — no folders, no separate READMEs.
 Every lab includes commands that work in any terminal. If you prefer VS Code,
 open the repository folder, use the integrated terminal, and use the provided
 VS Code tasks for build, test, format check, and the dev server.
-
