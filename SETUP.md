@@ -38,13 +38,6 @@ xcode-select --install
 
 Click **Install** in the pop-up. (This gives you Git.)
 
-### Linux
-
-```bash
-# Ubuntu / Debian
-sudo apt update && sudo apt install -y git
-```
-
 ### Check it worked
 
 Open a terminal and run:
@@ -68,13 +61,19 @@ git config --global user.email "alex.rivera@your-agency.gov"
 
 > **Why your real email?** It makes sure your work is credited to you.
 
-Then run these three to set beginner-friendly defaults (copy them exactly):
+Then run these to set beginner-friendly defaults (copy them exactly):
 
 ```bash
 git config --global init.defaultBranch main
 git config --global pull.rebase false
 git config --global core.autocrlf input
+git config --global core.editor "code --wait"
 ```
+
+> **Why `core.editor`?** Some Git commands open a text editor for you to
+> type a message. By default that's Vim, which is famously hard to exit
+> if you've never used it. This setting makes Git use VS Code instead, so
+> you won't get stuck. (Install VS Code in the next step first.)
 
 ### Check it worked
 
@@ -118,13 +117,6 @@ brew install node
 
 (If you don't have Homebrew, download the installer from [nodejs.org](https://nodejs.org/) instead — pick the **LTS** version.)
 
-### Linux
-
-```bash
-curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash -
-sudo apt install -y nodejs
-```
-
 > If your agency blocks these installers, download the **LTS** version from [nodejs.org](https://nodejs.org/) or use your internal software portal.
 
 ### Check it worked
@@ -144,11 +136,11 @@ Open VS Code, click the **Extensions** icon on the left sidebar (or press `Ctrl+
 
 | Extension                      | Publisher | What it does                                   |
 | ------------------------------ | --------- | ---------------------------------------------- |
-| **GitHub Pull Requests**       | GitHub    | Review and merge pull requests inside VS Code. |
-| **GitHub Actions**             | GitHub    | Write and watch automated workflows.           |
-| **GitLens — Git supercharged** | GitKraken | See who changed each line and when.            |
-| **YAML**                       | Red Hat   | Helps you edit workflow files.                 |
-| **Markdown All in One**        | Yu Zhang  | Nicer editing for READMEs and PR descriptions. |
+| **GitHub Pull Requests**       | GitHub    | _(Recommended)_ Review and merge pull requests inside VS Code. |
+| **GitHub Actions**             | GitHub    | _(Recommended)_ Write and watch automated workflows. |
+| **GitLens — Git supercharged** | GitKraken | _(Optional)_ See who changed each line and when. |
+| **YAML**                       | Red Hat   | _(Optional)_ Helps you edit workflow files.    |
+| **Markdown All in One**        | Yu Zhang  | _(Optional)_ Nicer editing for READMEs and PR descriptions. |
 
 **Faster option:** paste all of these into a terminal to install them at once:
 
@@ -172,15 +164,16 @@ The GitHub CLI (`gh`) is the easiest way to sign in to GitHub.
 winget install --id GitHub.cli
 ```
 
+> If `winget` is blocked at your agency, download the `.msi` installer
+> from the [GitHub CLI releases page](https://github.com/cli/cli/releases/latest)
+> (look for `gh_*_windows_amd64.msi`) and run it, or grab it from your
+> internal software portal.
+
 ### macOS
 
 ```bash
 brew install gh
 ```
-
-### Linux
-
-Follow the [official install guide](https://github.com/cli/cli/blob/trunk/docs/install_linux.md) for your distro.
 
 ### Check it worked
 
