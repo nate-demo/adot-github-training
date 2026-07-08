@@ -2,19 +2,31 @@
 
 This repository is the hands-on workspace for the ADOT GitHub for Developers workshop. Clone it, complete the labs in order, and use the same repo for every exercise.
 
+> **First time here?** Make sure you've finished [SETUP.md](./SETUP.md) —
+> it installs Git, VS Code, Node.js, and the GitHub CLI. Once your setup
+> is complete, follow the steps below to create your own repo.
+
 ## Getting your own copy (do this first)
 
-You cannot fork in the sandbox org, so create your own copy from this
-**template** repository:
+You can't fork inside the sandbox org, so you'll create your own copy from
+the shared **template** repository instead.
 
-1. On this repo, click **Use this template** -> **Create a new repository**.
-1. Set the owner to your **sandbox org**, choose **Internal** visibility,
-   and name it (for example `adot-git-<your-name>`).
-1. Enable Pages: **Settings** -> **Pages** -> **Source: GitHub Actions**.
-1. Clone your new repository (not this one) using the steps below.
-
-> Instructor note: on `nate-demo/adot-github-training`, enable
-> **Settings** -> **General** -> **Template repository** before class.
+1. Open the template repo:
+   [github.com/nate-demo/adot-github-training](https://github.com/nate-demo/adot-github-training).
+1. Click the green **Use this template** button, then choose
+   **Create a new repository**.
+1. On the create page:
+   - **Owner:** select your **sandbox org**.
+   - **Repository name:** use `adot-git-<your-name>` (for example
+     `adot-git-alex`).
+   - **Visibility:** choose **Internal**.
+   - Click **Create repository**.
+1. Turn on GitHub Pages so your site can deploy later:
+   - In your **new** repo, go to the **Settings** tab.
+   - In the left sidebar, click **Pages**.
+   - Under **Build and deployment** -> **Source**, select
+     **GitHub Actions**. (There's nothing to save — it applies immediately.)
+1. Clone your **new** repository (not the template) using the steps below.
 
 ## Quick start with the command line
 

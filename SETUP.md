@@ -223,6 +223,12 @@ Go through this checklist. You should be able to check every box:
 - [ ] `gh auth status` shows you're logged in
 - [ ] You installed the VS Code extensions (at least **GitHub Pull Requests** and **GitLens**)
 
+## Setup complete — what's next?
+
+Once every box above is checked, head to the [README](./README.md) and
+follow **"Getting your own copy"** to create and clone your training repo.
+That's where the labs begin.
+
 ---
 
 ## Troubleshooting
