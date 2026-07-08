@@ -121,6 +121,11 @@ change gets merged, then edit the **same line** a different way.
 ### Task 3: Open both pull requests
 
 1. In your browser, open your repository on GitHub
+
+   > **Shortcut:** if you have the GitHub CLI installed, run `gh browse`
+   > from inside the repo to open it on GitHub.com in your default
+   > browser — no need to hunt for the URL.
+
 1. Click the **Pull requests** tab
 1. Open a PR from `feature/fewer-tiles` -> `main`
    - Title: `Start game with 1 tile`
