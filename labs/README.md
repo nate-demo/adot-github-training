@@ -34,6 +34,28 @@ Ordered to match the workshop agenda.
 | 6   | [Create a Release](./lab-6-create-a-release.md) | 25 min    | Version bump, release branch, tagged release with notes.                      |
 | 7   | [Deploy](./lab-7-deploy.md)                     | 25 min    | Preview-deploy a branch to a GitHub Pages environment, roll back, then merge. |
 
+## Getting your own copy (do this first)
+
+You cannot fork in the sandbox org, so each of you will create your own
+copy from the shared **template** repository:
+
+1. Go to the training repo:
+   `https://github.com/nate-demo/adot-github-training`.
+1. Click **Use this template** -> **Create a new repository**.
+1. Set the owner to your **sandbox org**, choose **Internal** visibility
+   (so your partner can review your PRs in Labs 3, 6, and 7), and give it
+   a name such as `adot-git-<your-name>`.
+1. Click **Create repository**. You are now the admin/owner of your copy.
+1. Enable Pages: **Settings** -> **Pages** -> set **Source** to
+   **GitHub Actions** (required for Labs 1 and 7).
+1. Clone your new repo and install dependencies:
+
+   ```bash
+   git clone <your-new-repo-url>
+   cd <your-repo>
+   npm ci
+   ```
+
 ## Setup options
 
 Use whichever workflow is most comfortable. Both are supported throughout the labs.

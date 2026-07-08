@@ -16,10 +16,11 @@ Add this under `<!-- Lab 1: Add Game Rules -->` in `index.html`:
 
 ## Lab 3
 
-In `src/application.ts`, the correct reviewed value is:
+In `src/application.ts`, change the grid size back to `4` (the number
+only, keeping the options object):
 
 ```ts
-new GameManager(4);
+const manager = new GameManager(4, {
 ```
 
 ## Lab 7

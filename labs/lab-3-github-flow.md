@@ -36,11 +36,13 @@ before it can ship.
 
 1. Open [`src/application.ts`](../src/application.ts)
 1. Find the comment `// Lab 3: Grid Size`
-1. Change the input to `GameManager` to `5`
+1. On the next line, change the grid size passed to `GameManager` from
+   `4` to `5`. Change **only** the number — leave the rest of the line
+   (the `, {` and the options object) exactly as it is:
 
    ```ts
    // Lab 3: Grid Size
-   new GameManager(5);
+   const manager = new GameManager(5, {
    ```
 
    > **Note:** `5` is intentionally not the correct fix. The whole

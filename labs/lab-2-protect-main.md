@@ -62,8 +62,21 @@ CODEOWNERS tells GitHub who must approve changes to specific files.
 1. In **Rules**, enable:
 
    - **Require a pull request before merging**
-   - **Required approvals: 1**
-   - **Require review from Code Owners**
+
+   Leave **Required approvals** at **0** and do **not** enable
+   **Require review from Code Owners**.
+
+   > **Why 0 approvals?** In this workshop everyone owns their **own**
+   > repo, so you are the only person who can merge it — and GitHub
+   > never lets you approve your _own_ pull request. Requiring an
+   > approval (or a code-owner review) would make the solo labs (like
+   > Lab 4) impossible to merge. You will still practice requesting
+   > reviews, suggesting changes, and approving in Labs 3, 6, and 7 —
+   > the review is just not _enforced_ here.
+   >
+   > If you and a partner both have access to each other's repos and
+   > want the stricter experience, you can set **Required approvals: 1**
+   > for the paired labs.
 
 1. Click **Create**
 

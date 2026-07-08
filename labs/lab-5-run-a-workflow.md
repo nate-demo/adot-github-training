@@ -6,7 +6,7 @@ workflow, review the run logs, and see how a failed workflow behaves.
 ## Prerequisites
 
 - Lab 3 is complete (you have merged at least one PR)
-- Your fork has the workflow files in `.github/workflows/`
+- Your repository has the workflow files in `.github/workflows/`
 
 ## Scenario
 
@@ -28,7 +28,7 @@ on:
     branches: [main]
   pull_request:
     branches: [main]
-  workflow_dispatch:   # <- allows the manual "Run workflow" button
+  workflow_dispatch: # <- allows the manual "Run workflow" button
 
 jobs:
   build:
@@ -40,7 +40,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20.x
+          node-version: 22.x
 
       - name: Install Dependencies
         run: npm ci
@@ -55,7 +55,7 @@ jobs:
         run: npm test
 
       - name: Build
-       run: npm run build
+        run: npm run build
 ```
 
 > **Key parts:**
@@ -107,17 +107,22 @@ Cause a failing check on purpose, then re-run only the failed job.
    git checkout -b experiment/broken-lint
    ```
 
-1. Open any `.ts` file in `src/` and add a line with obvious lint
-   errors (unused variable, missing semicolon, etc.)
+1. Open any `.ts` file in `src/` and introduce a real type error so the
+   check fails reliably, for example:
+
+   ```ts
+   const brokenValue: number = "this is not a number";
+   ```
+
 1. Commit and push
 
    ```bash
    git add -A
-   git commit -m "Intentional lint error"
+   git commit -m "Intentional type error"
    git push -u origin experiment/broken-lint
    ```
 
-1. Open a PR. The **Lint** check will fail.
+1. Open a PR. The **Continuous Integration** check will fail.
 1. Click the failed check, then **Re-run failed jobs** to confirm the
    failure is real
 1. Close the PR without merging and delete the branch

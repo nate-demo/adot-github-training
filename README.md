@@ -2,6 +2,20 @@
 
 This repository is the hands-on workspace for the ADOT GitHub for Developers workshop. Clone it, complete the labs in order, and use the same repo for every exercise.
 
+## Getting your own copy (do this first)
+
+You cannot fork in the sandbox org, so create your own copy from this
+**template** repository:
+
+1. On this repo, click **Use this template** -> **Create a new repository**.
+1. Set the owner to your **sandbox org**, choose **Internal** visibility,
+   and name it (for example `adot-git-<your-name>`).
+1. Enable Pages: **Settings** -> **Pages** -> **Source: GitHub Actions**.
+1. Clone your new repository (not this one) using the steps below.
+
+> Instructor note: on `nate-demo/adot-github-training`, enable
+> **Settings** -> **General** -> **Template repository** before class.
+
 ## Quick start with the command line
 
 ```bash

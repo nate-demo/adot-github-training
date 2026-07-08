@@ -43,8 +43,8 @@ The continuous delivery workflow reads the version from
 
    ```jsonc
    {
-     "name": "@githubschool/gh-github-intermediate-template",
-     "description": "GitHub Intermediate Training - Template",
+     "name": "adot-github-developers-training",
+     "description": "Hands-on training repository for the ADOT GitHub for Developers workshop.",
      "version": "2.0.0",
      // ...
    }
@@ -98,19 +98,29 @@ on:
     paths:
       - package.json
 
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
 jobs:
   release:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
+      # ... setup Node, install dependencies, build ...
       - name: Read version
         id: package
         run: echo "version=$(node -p \"require('./package.json').version\")" >> "$GITHUB_OUTPUT"
+      - name: Create tag
+        id: tag
+        run: |
+          # creates tag v<version> only if it does not already exist
       - name: Create Release
+        if: steps.tag.outputs.created == 'true'
         uses: softprops/action-gh-release@v2
         with:
           tag_name: v${{ steps.package.outputs.version }}
@@ -121,10 +131,11 @@ Now watch it run:
 
 1. Click the **Actions** tab
 1. Open the running **Continuous Delivery** workflow
-1. Watch each step:
+1. Watch the steps run, including:
 
    - Checkout
-   - Tag
+   - Read version
+   - Create tag
    - Create Release
 
 ## Task 7: View the release

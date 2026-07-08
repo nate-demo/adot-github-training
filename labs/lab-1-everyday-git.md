@@ -86,9 +86,9 @@ The rules for the game are simple; you just need to display them.
 
 Before committing, make sure your change works.
 
-1. Open `index.html` in your web browser (double-click the file or drag
-   it into a browser tab), or run `npm run dev` and open the local URL
-   printed by Vite
+1. Run `npm run dev` and open the local URL printed by Vite (usually
+   `http://localhost:5173`). Opening `index.html` directly from disk
+   will not work — this is a Vite app that must be served.
 1. Confirm the rules appear above the game board
 
 ## Task 5: Stage and commit
