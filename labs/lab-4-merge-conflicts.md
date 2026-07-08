@@ -348,6 +348,20 @@ locally in your editor.
 1. Return to the PR in your browser and refresh it — the conflict
    banner is gone. Approve and merge.
 
+> **Tip: clean up your local branches.** This lab left four merged
+> branches behind. Switch back to `main`, then delete them so
+> `git branch` stays focused on active work:
+>
+> ```bash
+> git checkout main
+> git pull
+> git branch -d feature/fewer-tiles feature/more-tiles feature/rare-fours feature/common-fours
+> ```
+>
+> `git branch -d` only deletes branches that are fully merged, so it
+> is safe. To prune stale remote-tracking branches too, run
+> `git fetch --prune`.
+
 ---
 
 ## What to take away
