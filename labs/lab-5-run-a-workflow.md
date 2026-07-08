@@ -125,7 +125,18 @@ Cause a failing check on purpose, then re-run only the failed job.
 1. Open a PR. The **Continuous Integration** check will fail.
 1. Click the failed check, then **Re-run failed jobs** to confirm the
    failure is real
-1. Close the PR without merging and delete the branch
+1. Close the PR without merging and delete the branch on GitHub
+1. Clean up the branch on your machine too
+
+   ```bash
+   git checkout main
+   git branch -D experiment/broken-lint
+   ```
+
+   > **Why `-D` here:** this branch was never merged, so the safe
+   > `git branch -d` would refuse to delete it. The capital `-D`
+   > forces the delete — which is what you want for a throwaway
+   > experiment.
 
 ## Task 4: Cancel a run (optional)
 

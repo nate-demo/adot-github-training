@@ -18,7 +18,32 @@ add the rules to the page so new players know what to do.
 
 ---
 
-## Task 1: Clone the repository
+## Task 1: Confirm your Git identity
+
+Every commit is stamped with a name and email. Getting this right **before**
+your first commit is what makes your work show up as _you_ in your
+organization.
+
+1. Check what Git currently has
+
+   ```bash
+   git config --global user.name
+   git config --global user.email
+   ```
+
+1. If either is blank or wrong, set it
+
+   ```bash
+   git config --global user.name "Your Name"
+   git config --global user.email "you@your-org.com"
+   ```
+
+> **Use your org email.** The email must match the one you use to
+> authenticate to your organization on GitHub. If it doesn't, your
+> commits won't be linked to your account and you'll show up as the
+> wrong user (or an unknown one) in the org.
+
+## Task 2: Clone the repository
 
 If you have not already, clone your copy of the training repository.
 
@@ -42,7 +67,7 @@ If you have not already, clone your copy of the training repository.
 > its remote configuration to your machine. `origin` now points at
 > GitHub.
 
-## Task 2: Create a feature branch
+## Task 3: Create a feature branch
 
 Never work directly on `main`. Always branch first.
 
@@ -63,7 +88,7 @@ Never work directly on `main`. Always branch first.
 > **Why branch first:** branches keep unfinished work isolated. If you
 > break something, `main` is untouched.
 
-## Task 3: Add the feature
+## Task 4: Add the feature
 
 The rules for the game are simple; you just need to display them.
 
@@ -82,7 +107,7 @@ The rules for the game are simple; you just need to display them.
 
 1. Save the file
 
-## Task 4: Test locally
+## Task 5: Test locally
 
 Before committing, make sure your change works.
 
@@ -106,7 +131,7 @@ Before committing, make sure your change works.
 
    Then run `npm run format:check` again — it should now pass.
 
-## Task 5: Stage and commit
+## Task 6: Stage and commit
 
 Now capture the change in your local history.
 
@@ -141,7 +166,7 @@ Now capture the change in your local history.
 > - `git commit` snapshots everything in the staging area into your
 >   local repository history
 
-## Task 6: Push your branch to GitHub
+## Task 7: Push your branch to GitHub
 
 Your commit still lives only on your machine. Publish it.
 
@@ -153,7 +178,7 @@ Your commit still lives only on your machine. Publish it.
 
 1. GitHub prints a URL you can click to open a pull request
 
-## Task 7: Open a pull request
+## Task 8: Open a pull request
 
 1. In your browser, open the repository on GitHub
 1. GitHub shows a yellow banner: **feature/rules had recent pushes** —
@@ -162,7 +187,7 @@ Your commit still lives only on your machine. Publish it.
 1. Give the PR a title and short description
 1. Click **Create pull request**
 
-## Task 8: Merge and verify
+## Task 9: Merge and verify
 
 Because `main` is not yet protected, you can merge your own PR. Later
 labs will require a review first.
@@ -173,7 +198,7 @@ labs will require a review first.
 1. Open your GitHub Pages link (in the repo's **About** panel) and
    verify the rules are displayed
 
-## Task 9: Clean up your local branch
+## Task 10: Clean up your local branch
 
 Your feature branch is done. Remove it locally.
 
