@@ -22,13 +22,13 @@ Ordered to match the workshop agenda.
 | #   | Lab                                     | Est. time | You will learn                                                       |
 | --- | --------------------------------------- | --------- | -------------------------------------------------------------------- |
 | 1   | [Everyday Git](./lab-1-everyday-git.md) | 30 min    | The daily workflow: clone, branch, commit, push, PR, merge, cleanup. |
+| 2   | [Protect Main](./lab-2-protect-main.md) | 20 min    | Use CODEOWNERS and rulesets to block direct pushes to `main`.        |
+| 3   | [GitHub Flow](./lab-3-github-flow.md)   | 30 min    | Open, review, suggest changes on, and approve a pull request.        |
 
 **Day 2**
 
 | #   | Lab                                             | Est. time | You will learn                                                                |
 | --- | ----------------------------------------------- | --------- | ----------------------------------------------------------------------------- |
-| 2   | [Protect Main](./lab-2-protect-main.md)         | 20 min    | Use CODEOWNERS and rulesets to block direct pushes to `main`.                 |
-| 3   | [GitHub Flow](./lab-3-github-flow.md)           | 30 min    | Open, review, suggest changes on, and approve a pull request.                 |
 | 4   | [Merge Conflicts](./lab-4-merge-conflicts.md)   | 40 min    | Create your own conflict, then resolve it in the UI and on the command line.  |
 | 5   | [Run a Workflow](./lab-5-run-a-workflow.md)     | 20 min    | Trigger a GitHub Actions workflow, inspect logs, re-run and cancel.           |
 | 6   | [Create a Release](./lab-6-create-a-release.md) | 25 min    | Version bump, release branch, tagged release with notes.                      |

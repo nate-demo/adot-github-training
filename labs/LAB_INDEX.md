@@ -11,13 +11,13 @@ Each lab is a single markdown file — no folders, no separate READMEs.
 | #   | File                                               | Est. time | Concepts                                        |
 | --- | -------------------------------------------------- | --------- | ----------------------------------------------- |
 | 1   | [`lab-1-everyday-git.md`](./lab-1-everyday-git.md) | 30 min    | clone, branch, commit, push, PR, merge, cleanup |
+| 2   | [`lab-2-protect-main.md`](./lab-2-protect-main.md) | 20 min    | CODEOWNERS, rulesets, blocked pushes            |
+| 3   | [`lab-3-github-flow.md`](./lab-3-github-flow.md)   | 30 min    | PRs, reviews, suggestions, approvals            |
 
 ## Day 2
 
 | #   | File                                                       | Est. time | Concepts                                    |
 | --- | ---------------------------------------------------------- | --------- | ------------------------------------------- |
-| 2   | [`lab-2-protect-main.md`](./lab-2-protect-main.md)         | 20 min    | CODEOWNERS, rulesets, blocked pushes        |
-| 3   | [`lab-3-github-flow.md`](./lab-3-github-flow.md)           | 30 min    | PRs, reviews, suggestions, approvals        |
 | 4   | [`lab-4-merge-conflicts.md`](./lab-4-merge-conflicts.md)   | 40 min    | learner-driven conflicts, UI + command line |
 | 5   | [`lab-5-run-a-workflow.md`](./lab-5-run-a-workflow.md)     | 20 min    | Actions, workflow dispatch, logs, re-run    |
 | 6   | [`lab-6-create-a-release.md`](./lab-6-create-a-release.md) | 25 min    | semver, release branches, tags, notes       |

@@ -56,13 +56,16 @@ the #1 time sink for first-timers.
 
 ## Day 1
 
-| Segment            | Wall-clock | Notes                                         |
-| ------------------ | ---------- | --------------------------------------------- |
-| Attendee setup     | 25–35 min  | Template -> clone -> `npm ci` -> enable Pages |
-| Lab 1 Everyday Git | 40–50 min  | First clone/branch/PR/merge; auth friction    |
+| Segment            | Wall-clock | Notes                                           |
+| ------------------ | ---------- | ----------------------------------------------- |
+| Attendee setup     | 25–35 min  | Template -> clone -> `npm ci` -> enable Pages    |
+| Lab 1 Everyday Git | 40–50 min  | First clone/branch/PR/merge; auth friction      |
+| Lab 2 Protect Main | 25–35 min  | Rulesets UI; set approvals to **0** (see below)  |
+| Lab 3 GitHub Flow  | 35–45 min  | Pairing + cross-repo review access; flex item   |
 
-Day 1 hands-on total: **~65–85 min**. Comfortable inside a 3.5-hr day
-with slides.
+Day 1 hands-on total: **~2.1–2.9 hrs**. Full but workable in a 3.5-hr
+day. **Lab 3 is the flex item** — if you run long, finish it at the top of
+Day 2 before Lab 4.
 
 ---
 
@@ -70,15 +73,13 @@ with slides.
 
 | #   | Lab             | Wall-clock | Watch out for                                   |
 | --- | --------------- | ---------- | ----------------------------------------------- |
-| 2   | Protect Main    | 25–35 min  | Rulesets UI; set approvals to **0** (see below) |
-| 3   | GitHub Flow     | 35–45 min  | Pairing + cross-repo review access              |
 | 4   | Merge Conflicts | 50–65 min  | Hardest lab; two rounds (UI + CLI)              |
 | 5   | Run a Workflow  | 25–30 min  | Failure task is optional                        |
 | 6   | Create Release  | 30–40 min  | Pairing again; wait on CD workflow              |
 | 7   | Deploy          | 30–45 min  | Pages/env, comment-bot latency, rollback wait   |
 
-Day 2 hands-on total: **~3.2–4.3 hrs** — this is tight-to-over for one
-3.5-hr day. Plan to compress (below).
+Day 2 hands-on total: **~2.3–3.0 hrs** — fits a 3.5-hr day. Labs 6 and 7
+form the **capstone**; run them hands-on if time allows, otherwise demo.
 
 ### If you are running long, cut in this order
 
